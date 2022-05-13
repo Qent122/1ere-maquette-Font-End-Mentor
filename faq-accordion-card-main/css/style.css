@@ -1,0 +1,46 @@
+
+
+* {
+    font-family: 'Kumbh Sans', sans-serif;
+    text-align: center;
+}
+
+html {
+    background-color: hsl(273, 75%, 66%);
+}
+
+.light{
+    font-weight: 400;
+}
+.gras{
+    font-weight: 700;
+}
+
+body {
+    height: 60vh;
+    margin-top: 40%;
+    margin-bottom: 20%;
+    margin-left: 7%;
+    margin-right: 7%;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+#svg {
+    position: relative;
+    height: 20%;
+}
+
+#svg svg {
+    position: absolute;
+    top: -8em;
+    left: 15%;
+    width: 14em;
+    aspect-ratio: 1;
+}
+#txt{
+    height: 80%;
+}
+#txt h1{
+    font-size: 1.5em;
+}

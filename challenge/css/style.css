@@ -7,11 +7,16 @@
     text-decoration: none;
     list-style: none;
 
+
 }
 
-html {
-    background: rgb(101,101,231);
-background: linear-gradient(0deg, rgba(101,101,231,1) 0%, rgba(175,103,233,1) 100%);
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgb(101, 101, 231);
+    background: linear-gradient(0deg, rgba(101, 101, 231, 1) 0%, rgba(175, 103, 233, 1) 100%);
 }
 
 .light {
@@ -25,19 +30,14 @@ background: linear-gradient(0deg, rgba(101,101,231,1) 0%, rgba(175,103,233,1) 10
 .txtGrey {
     color: rgb(137, 137, 137);
 }
-.displayN {
-    display: none;
-  }
-  .displayF {
-    display: flex;
-  }
 
-body {
+
+/* carte  */
+main .card {
     display: flex;
     flex-direction: column;
-    height: 70vh;
-    margin-top: 40%;
-    margin-bottom: 25%;
+    height: max-content;
+    width: 100%;
     margin-left: 7%;
     margin-right: 7%;
     border-radius: 20px;
@@ -46,25 +46,38 @@ body {
 
 #svg {
     position: relative;
-    height: 20%;
+    height: 8em;
+    /* width: 100%; */
 }
 
-#svg #logo {
+#svg #logo1 {
     position: absolute;
+    transform: translatex(-50%);
     top: -8em;
-    left: 15%;
+    left: 50%;
     width: 14em;
     aspect-ratio: 1;
 }
+#svg #logo2{
+    display: none;
+}
 
-#svg svg {
+#svg #mobile {
+    /* display: block; */
     position: absolute;
+    transform: translatex(-50%);
     top: -0.3em;
-    left: 12%;
+    left: 50%;
+}
+
+#svg #pc{
+    display: none;
+    position: absolute;
+    transform: translatex(-50%);
 }
 
 #txt {
-    height: 60%;
+    height: 80%;
     padding-left: 10%;
     padding-right: 10%;
     display: flex;
@@ -74,17 +87,20 @@ body {
 }
 
 #txt h1 {
-    font-size: 1.8em;
+    font-size: 2em;
     text-align: center;
 }
 
 #txt hr {
     background-color: rgb(247, 247, 247);
 }
+
 #txt ul {
     height: 70%;
+    margin: 1em 0 2em 0;
     width: 100%;
 }
+
 #txt li {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
@@ -94,7 +110,66 @@ body {
     font-size: 0.8em;
 }
 
+
 #txt p {
+
     font-size: 0.7em;
     padding-bottom: 1em;
+    display: none;
+}
+
+/* toggle */
+#txt p.active {
+    display: block;
+}
+
+#txt li.active {
+    font-weight: 700;
+    color: #000;
+}
+
+#txt #arrow.active {
+    transform: rotate(180deg);
+}
+
+@media screen and (min-width:768px) {
+    main .card {
+        margin: 8em;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #svg {
+        height: 100%;
+        width: 50%;
+    }
+    #svg #logo1{
+        top: 1em;
+        left: 7em;
+        width: 25em;
+        aspect-ratio: 1;
+    }
+    #svg #logo2{
+        display: none;
+    }
+    #svg #mobile{
+        display: none;
+
+    }
+    #svg #pc{
+         display: block;
+       top: -21.5em;
+      left: -10em;
+    }
+
+    #txt {
+        width: 50%;
+        padding-left: 0;
+        padding-right: 1em;
+        margin: 2em;
+    }
+
+    #txt li:hover {
+        color: #f47c57;
+    }
 }
